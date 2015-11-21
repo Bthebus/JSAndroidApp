@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView2"
+        android:src="@drawable/logo"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Cart Details"
+        android:id="@+id/btnViewCart"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:id="@+id/listView"
+        android:layout_below="@+id/btnViewCart"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Out"
+        android:id="@+id/btnSignOut"
+        android:layout_below="@+id/listView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yusra Ismail-Michael Jansen-Braedy Thebus"
+        android:id="@+id/lblFooter"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/btnSignOut" />
+</RelativeLayout>

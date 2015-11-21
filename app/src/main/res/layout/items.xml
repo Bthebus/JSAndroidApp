@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView3" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/txtItemName"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentRight="false"
+                android:layout_alignLeft="@+id/btnAddToCart"
+                android:layout_alignStart="@+id/btnAddToCart" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgItem"
+                android:layout_below="@+id/txtItemName"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/txtDescription"
+                android:layout_below="@+id/imgItem"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/txtPrice"
+                android:layout_below="@+id/txtDescription"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add To Cart"
+                android:id="@+id/btnAddToCart"
+                android:layout_below="@+id/txtPrice"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentEnd="false" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
