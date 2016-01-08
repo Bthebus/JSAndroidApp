@@ -12,7 +12,7 @@ public interface RestAPI<S, ID> {
 
     String put(S entity);
 
-    String delete(S entity);
+    void delete(S entity);
 
     List<S> getAll();
 }

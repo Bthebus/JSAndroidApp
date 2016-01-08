@@ -43,8 +43,8 @@ public class RestCustomerAPI implements RestAPI<Customer, Long>{
     }
 
     @Override
-    public String delete(Customer entity) {
-        return null;
+    public void delete(Customer entity) {
+        //return null;
     }
 
     @Override

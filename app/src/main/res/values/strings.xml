@@ -3,4 +3,27 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="resViewCartDetailsBtn">View Cart Details</string>
+    <string name="ResSignOutCartBtn">Sign Out</string>
+    <string name="ResFooterCart">Yusra Ismail-Michael Jansen-Braedy Thebus</string>
+    <string name="ResTxtUsername">username</string>
+    <string name="ResTxtPassword">password</string>
+    <string name="ResSignInBtn">Sign In</string>
+    <string name="ResExitBtn">Exit</string>
+    <string name="ResTemp">Add To Cart</string>
+    <string name="ResBtnAddItem">Add New Item</string>
+    <string name="ResBtnCancelItem">Cancel</string>
+    <string name="ResBtnSaveItem">Save</string>
+    <string name="ResLblItemID">Item ID</string>
+    <string name="ResLblItemName">Item Name</string>
+    <string name="ResLblItemDesc">Item Description</string>
+    <string name="ResLblItemPrice">Item Price</string>
+    <string name="ResLblItemQuantity">Quantity</string>
+    <string name="ResLogo">logo</string>
+    <string name="ResBtnEditItem">Edit Item</string>
+    <string name="title_activity_blank">blankActivity</string>
+    <string name="ResMenuEdit">Edit</string>
+    <string name="ResMenuDelete">Delete</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_delete">Delete</string>
 </resources>

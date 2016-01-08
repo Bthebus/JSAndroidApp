@@ -30,7 +30,7 @@
                 android:ems="10"
                 android:id="@+id/txtUsername"
                 android:layout_alignParentEnd="false"
-                android:hint="username"
+                android:hint="@string/ResTxtUsername"
                 android:layout_below="@+id/imageView"
                 android:layout_centerHorizontal="true" />
 
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/txtPassword"
-                android:hint="password"
+                android:hint="@string/ResTxtPassword"
                 android:password="true"
                 android:inputType="textPassword"
                 android:layout_below="@+id/txtUsername"
@@ -48,7 +48,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign In"
+                android:text="@string/ResSignInBtn"
                 android:id="@+id/btnSignIn"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
@@ -59,7 +59,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Exit"
+                android:text="@string/ResExitBtn"
                 android:id="@+id/btnExit"
                 android:layout_alignParentBottom="true"
                 android:layout_below="@+id/btnSignIn"

@@ -5,18 +5,14 @@ package jewellerystore.com.example.jewellerystore.repositories.rest;
  * Created by Braedy Thebus on 2015-11-16.
  */
 
-/**
- *
- * REMOVE COMMENTS. I had problems with springframework so i cant run the application to test it.
- *
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.GsonHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
-*/
+
 public class RestMethods {
 
-   /* public static RestTemplate getRestTemplate()
+    public static RestTemplate getRestTemplate()
     {
         RestTemplate restTemplate = new RestTemplate();
 
@@ -29,5 +25,5 @@ public class RestMethods {
         HttpHeaders requestHeaders = new HttpHeaders();
         requestHeaders.setContentType(new MediaType("application", "json"));
         return requestHeaders;
-    }*/
+    }
 }

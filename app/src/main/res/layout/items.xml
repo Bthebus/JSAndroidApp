@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/relLayoutAddItem">
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -11,54 +12,125 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Large Text"
-                android:id="@+id/txtItemName"
-                android:layout_alignParentEnd="false"
-                android:layout_alignParentTop="false"
-                android:layout_alignParentRight="false"
-                android:layout_alignLeft="@+id/btnAddToCart"
-                android:layout_alignStart="@+id/btnAddToCart" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imgItem"
-                android:layout_below="@+id/txtItemName"
-                android:layout_centerHorizontal="true"
-                android:src="@mipmap/ic_launcher" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/txtDescription"
-                android:layout_below="@+id/imgItem"
-                android:layout_centerHorizontal="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Small Text"
-                android:id="@+id/txtPrice"
-                android:layout_below="@+id/txtDescription"
-                android:layout_centerHorizontal="true" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add To Cart"
-                android:id="@+id/btnAddToCart"
-                android:layout_below="@+id/txtPrice"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentEnd="false" />
-
         </RelativeLayout>
     </ScrollView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/ResLogo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/lblItemName"
+        android:text="@string/ResLblItemName"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/ResLblItemDesc"
+        android:id="@+id/lblItemDescription"
+        android:layout_alignTop="@+id/txtItemDescription"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/ResLblItemPrice"
+        android:id="@+id/lblItemPrice"
+        android:layout_alignTop="@+id/txtItemPrice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/ResLblItemQuantity"
+        android:id="@+id/lblItemQuantity"
+        android:layout_alignTop="@+id/txtItemQuantity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtItemName"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/lblItemDescription"
+        android:layout_toEndOf="@+id/lblItemDescription"
+        android:layout_marginRight="15dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtItemDescription"
+        android:layout_toRightOf="@+id/lblItemDescription"
+        android:layout_below="@+id/txtItemName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtItemPrice"
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/txtItemDescription"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/txtItemDescription"
+        android:layout_alignStart="@+id/txtItemDescription"
+        android:layout_marginRight="15dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtItemQuantity"
+        android:inputType="number"
+        android:layout_below="@+id/txtItemPrice"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/txtItemPrice"
+        android:layout_alignStart="@+id/txtItemPrice"
+        android:layout_marginRight="15dp"/>
+
+        -->
+
+     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/btnSaveItem"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+         android:layout_margin="15dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ResBtnCancelItem"
+        android:id="@+id/btnCancelItem"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/txtItemQuantity"
+        android:layout_alignEnd="@+id/txtItemQuantity"
+        android:layout_margin="15dp"/>
+
 </RelativeLayout>
