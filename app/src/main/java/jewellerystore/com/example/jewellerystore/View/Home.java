@@ -46,8 +46,8 @@ public class Home extends AppCompatActivity {
         hashMap = new HashMap<String, String>();
         viewItems();
         addItemButton();
-        final Button btnSignOut = (Button)findViewById(R.id.btnSignOut);
-        btnSignOut.setOnClickListener(new OnClickListener() {
+        final Button btnBack = (Button)findViewById(R.id.btnBackItems);
+        btnBack.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {

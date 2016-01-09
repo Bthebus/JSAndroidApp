@@ -51,16 +51,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listView"
-        android:layout_above="@+id/btnSignOut"
+        android:layout_above="@+id/btnBackItems"
         android:layout_below="@+id/linearHeading"
         />
-
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ResSignOutCartBtn"
-        android:id="@+id/btnSignOut"
+        android:text="@string/ResBtnBackItems"
+        android:id="@+id/btnBackItems"
         android:layout_toRightOf="@+id/btnAddItem"
         android:layout_above="@+id/lblFooter"
         android:width="150dp"

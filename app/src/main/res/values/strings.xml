@@ -26,4 +26,10 @@
     <string name="ResMenuDelete">Delete</string>
     <string name="menu_edit">Edit</string>
     <string name="menu_delete">Delete</string>
+    <string name="title_activity_main_menu">main_menu</string>
+    <string name="ReslblMainMenu">Main Menu</string>
+    <string name="ResBtnMenuItem">Item</string>
+    <string name="ResBtnMenuEmployee">Employee/User</string>
+    <string name="ResBtnMenuCustomer">Customer</string>
+    <string name="ResBtnBackItems">Back</string>
 </resources>

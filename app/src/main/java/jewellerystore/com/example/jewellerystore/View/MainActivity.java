@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                         {
                             username.setText("");
                             password.setText("");
-                            Intent intent = new Intent(view.getContext(), Home.class);
+                            Intent intent = new Intent(view.getContext(), main_menu.class);
                             startActivityForResult(intent, 0);
                         }
 

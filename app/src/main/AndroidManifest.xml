@@ -23,6 +23,10 @@
         </activity>
         <activity android:name=".View.Home" />
         <activity android:name=".View.Items" />
+        <activity
+            android:name=".View.main_menu"
+            android:label="@string/title_activity_main_menu" >
+        </activity>
     </application>
 
 </manifest>
