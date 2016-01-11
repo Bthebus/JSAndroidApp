@@ -21,11 +21,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.Home" />
         <activity android:name=".View.Items" />
+        <activity android:name=".View.ItemDetails" />
         <activity
-            android:name=".View.main_menu"
+            android:name=".View.Menu"
             android:label="@string/title_activity_main_menu" >
+        </activity>
+        <activity
+            android:name=".View.Customers"
+            android:label="@string/title_activity_customer" >
+        </activity>
+        <activity
+            android:name=".View.CustomerDetails"
+            android:label="@string/title_activity_customer_details" >
         </activity>
     </application>
 

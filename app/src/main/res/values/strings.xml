@@ -32,4 +32,16 @@
     <string name="ResBtnMenuEmployee">Employee/User</string>
     <string name="ResBtnMenuCustomer">Customer</string>
     <string name="ResBtnBackItems">Back</string>
+    <string name="title_activity_customer">Customer</string>
+    <string name="title_activity_customer_details">Customer Details</string>
+    <string name="ResTxtSearchCustomer">Search by Name/Surname/Company</string>
+    <string name="ResBtnCloseCustomerDetails">Close</string>
+    <string name="ResLblCustomerName">Name</string>
+    <string name="ResLblCustomerCompany">Company Name</string>
+    <string name="ResLblCustomerEmail">E-mail</string>
+    <string name="ResLblCustomerTel">Telephone Number</string>
+    <string name="ResLblCustomerCell">Cellphone</string>
+    <string name="ResLblCustomerAddress">Address</string>
+    <string name="ResCustomerDetails">View Details</string>
+    <string name="view_customer_details">View Details</string>
 </resources>

@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="jewellerystore.com.example.jewellerystore.View.Menu">
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView4"
+        android:src="@drawable/logo"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ReslblMainMenu"
+        android:id="@+id/lblMainMenu"
+        android:layout_below="@+id/imageView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ResBtnMenuItem"
+        android:id="@+id/btnMenuItem"
+        android:layout_below="@+id/lblMainMenu"
+        android:layout_alignRight="@+id/btnMenuEmployee"
+        android:layout_alignEnd="@+id/btnMenuEmployee"
+        android:layout_alignLeft="@+id/btnMenuEmployee"
+        android:layout_alignStart="@+id/btnMenuEmployee" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ResBtnMenuEmployee"
+        android:id="@+id/btnMenuEmployee"
+        android:layout_below="@+id/btnMenuItem"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ResBtnMenuCustomer"
+        android:id="@+id/btnMenuCustomer"
+        android:layout_below="@+id/btnMenuEmployee"
+        android:layout_alignRight="@+id/btnMenuEmployee"
+        android:layout_alignEnd="@+id/btnMenuEmployee"
+        android:layout_alignLeft="@+id/btnMenuEmployee"
+        android:layout_alignStart="@+id/btnMenuEmployee" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ResFooterCart"
+        android:id="@+id/lblFooterMenu"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="54dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ResSignOutCartBtn"
+        android:id="@+id/btnSignOut"
+        android:width="150dp"
+        android:layout_below="@+id/btnMenuCustomer"
+        android:layout_alignRight="@+id/btnMenuCustomer"
+        android:layout_alignEnd="@+id/btnMenuCustomer"
+        android:layout_alignLeft="@+id/btnMenuCustomer"
+        android:layout_alignStart="@+id/btnMenuCustomer" />
+
+</RelativeLayout>
