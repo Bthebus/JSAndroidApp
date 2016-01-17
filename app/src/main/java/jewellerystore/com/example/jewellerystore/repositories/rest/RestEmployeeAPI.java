@@ -32,6 +32,16 @@ public class RestEmployeeAPI implements RestAPI<Employee, Long>{
         return employee;
     }
 
+    /*@Override
+    public Employee getByUsername(String username)
+    {
+        final String url = BASE_URL + "username/" + username;
+        HttpEntity<Employee> requestEntity = new HttpEntity<Employee>(requestHeaders);
+        ResponseEntity<Employee> responseEntity = restTemplate.exchange(url, HttpMethod.GET,requestEntity, Employee.class);
+        Employee employee = responseEntity.getBody();
+        return employee;
+    }*/
+
     @Override
     public String post(Employee employee)
     {

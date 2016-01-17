@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import jewellerystore.com.example.jewellerystore.R;
 
@@ -19,6 +20,7 @@ public class main_menu extends AppCompatActivity {
 
         final Button btnMenuItem = (Button) findViewById(R.id.btnMenuItem);
         final Button btnSignOut = (Button) findViewById(R.id.btnSignOut);
+        final Button btnEmployee = (Button) findViewById(R.id.btnMenuEmployee);
 
         btnMenuItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +39,15 @@ public class main_menu extends AppCompatActivity {
             }
         });
 
+        btnEmployee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intentEmployee = new Intent(main_menu.this,Employee_List.class);
+                System.out.println("Activity created");
+                startActivity(intentEmployee);
+            }
+        });
 
     }
 
