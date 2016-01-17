@@ -8,19 +8,19 @@ public class Customer {
     private Name name;
     private String companyName;
     private ContactInformation contactInformation;
-    private Address address;
+    private String address;
 
     public Customer() {
     }
 
-    public Customer(Name name, String companyName, ContactInformation contactInformation, Address address) {
+    public Customer(Name name, String companyName, ContactInformation contactInformation, String address) {
         this.name = name;
         this.contactInformation = contactInformation;
         this.address = address;
         this.companyName = companyName;
     }
 
-    public Customer(Long id, Name name, String companyName, ContactInformation contactInformation, Address address) {
+    public Customer(Long id, Name name, String companyName, ContactInformation contactInformation, String address) {
         this.id = id;
         this.name = name;
         this.contactInformation = contactInformation;
@@ -60,11 +60,11 @@ public class Customer {
         this.contactInformation = contactInformation;
     }
 
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 }

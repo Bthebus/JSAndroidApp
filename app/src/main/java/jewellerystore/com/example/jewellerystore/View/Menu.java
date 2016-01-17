@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import jewellerystore.com.example.jewellerystore.R;
+import jewellerystore.com.example.jewellerystore.model.Orders;
 
 public class Menu extends AppCompatActivity {
 
@@ -19,6 +20,7 @@ public class Menu extends AppCompatActivity {
         final Button btnMenuItem = (Button) findViewById(R.id.btnMenuItem);
         final Button btnSignOut = (Button) findViewById(R.id.btnSignOut);
         final Button btnMenuCustomer = (Button) findViewById((R.id.btnMenuCustomer));
+        final Button btnMenuOrders = (Button) findViewById(R.id.btnMenuOrders);
 
         btnMenuItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +45,15 @@ public class Menu extends AppCompatActivity {
             public void onClick(View v) {
 
                 finish();
+            }
+        });
+
+        btnMenuOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intentOrders = new Intent(Menu.this, jewellerystore.com.example.jewellerystore.View.Orders.class);
+                startActivity(intentOrders);
             }
         });
 

@@ -35,6 +35,10 @@
             android:name=".View.Employee"
             android:label="@string/title_activity_employee" >
         </activity>
+        <activity
+            android:name=".View.Orders"
+            android:label="@string/title_activity_orders" >
+        </activity>
     </application>
 
 </manifest>

@@ -6,4 +6,10 @@
         android:title="View customer details"
         android:text="Customer Details"/>
 
+    <item
+        android:id="@+id/emailCustomer"
+        android:title="Email"
+        android:text="Email"
+        />
+
 </menu>

@@ -5,20 +5,20 @@ import java.util.Date;
 /**
  * Created by Braedy Thebus on 2015-11-16.
  */
-public class Order {
+public class Orders {
     private Long id;
     private Long customerId;
-    private Date orderDate;
+    private String orderDate;
 
-    public Order() {
+    public Orders() {
     }
 
-    public Order(Long customerId, Date orderDate) {
+    public Orders(Long customerId, String orderDate) {
         this.customerId = customerId;
         this.orderDate = orderDate;
     }
 
-    public Order(Long id, Long customerId, Date orderDate) {
+    public Orders(Long id, Long customerId, String orderDate) {
         this.id = id;
         this.customerId = customerId;
         this.orderDate = orderDate;
@@ -40,11 +40,11 @@ public class Order {
         this.customerId = customerId;
     }
 
-    public Date getOrderDate() {
+    public String getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Date orderDate) {
+    public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
 }

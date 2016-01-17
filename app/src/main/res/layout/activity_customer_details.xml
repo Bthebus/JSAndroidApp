@@ -21,7 +21,8 @@
         android:text="Close Customer Details"
         android:id="@+id/btnCloseCustomerDetails"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        />
 
     <TextView
         android:layout_width="135dp"
@@ -31,7 +32,8 @@
         android:id="@+id/lblCustomerName"
         android:layout_below="@+id/imageView6"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +43,8 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/imageView6"
         android:layout_alignLeft="@+id/btnCloseCustomerDetails"
-        android:layout_alignStart="@+id/btnCloseCustomerDetails" />
+        android:layout_alignStart="@+id/btnCloseCustomerDetails"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="135dp"
@@ -51,7 +54,8 @@
         android:id="@+id/lblCompanyName"
         android:layout_below="@+id/lblCustomerName"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,7 +65,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/lblCompanyName"
         android:layout_alignLeft="@+id/txtCustomerName"
-        android:layout_alignStart="@+id/txtCustomerName" />
+        android:layout_alignStart="@+id/txtCustomerName"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="135dp"
@@ -71,7 +76,8 @@
         android:id="@+id/lblCustomerEmail"
         android:layout_below="@+id/lblCompanyName"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -81,7 +87,8 @@
         android:layout_alignStart="@+id/txtCustomerCompany"
         android:layout_below="@+id/txtCustomerCompany"
         android:layout_alignRight="@+id/txtCustomerCompany"
-        android:layout_alignEnd="@+id/txtCustomerCompany" />
+        android:layout_alignEnd="@+id/txtCustomerCompany"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="135dp"
@@ -91,7 +98,8 @@
         android:id="@+id/lblCustomerTelephone"
         android:layout_below="@+id/lblCustomerEmail"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -101,7 +109,8 @@
         android:layout_alignStart="@+id/txtCustomerEmail"
         android:layout_alignTop="@+id/lblCustomerTelephone"
         android:layout_alignRight="@+id/txtCustomerEmail"
-        android:layout_alignEnd="@+id/txtCustomerEmail" />
+        android:layout_alignEnd="@+id/txtCustomerEmail"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="135dp"
@@ -111,7 +120,8 @@
         android:id="@+id/lblCustomerCell"
         android:layout_below="@+id/lblCustomerTelephone"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -121,7 +131,8 @@
         android:layout_alignLeft="@+id/txtCustomerTel"
         android:layout_alignStart="@+id/txtCustomerTel"
         android:layout_alignRight="@+id/txtCustomerTel"
-        android:layout_alignEnd="@+id/txtCustomerTel" />
+        android:layout_alignEnd="@+id/txtCustomerTel"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="135dp"
@@ -131,56 +142,18 @@
         android:id="@+id/lblAddress"
         android:layout_below="@+id/lblCustomerCell"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:id="@+id/txtAddressNo"
+        android:layout_height="60dp"
+        android:id="@+id/txtAddress"
         android:layout_alignLeft="@+id/txtCustomerCell"
         android:layout_alignStart="@+id/txtCustomerCell"
         android:layout_alignTop="@+id/lblAddress"
         android:layout_alignRight="@+id/txtCustomerTel"
-        android:layout_alignEnd="@+id/txtCustomerTel" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:id="@+id/txtAddressStreet"
-        android:layout_alignLeft="@+id/txtAddressNo"
-        android:layout_alignStart="@+id/txtAddressNo"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/lblAddress" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:id="@+id/txtAddressTown"
-        android:layout_below="@+id/txtAddressStreet"
-        android:layout_alignLeft="@+id/txtAddressStreet"
-        android:layout_alignStart="@+id/txtAddressStreet"
-        android:layout_alignRight="@+id/txtAddressStreet"
-        android:layout_alignEnd="@+id/txtAddressStreet" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:id="@+id/txtAddressProvince"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/txtAddressTown"
-        android:layout_alignLeft="@+id/txtAddressTown"
-        android:layout_alignStart="@+id/txtAddressTown" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:id="@+id/txtAddressPostalCode"
-        android:layout_alignLeft="@+id/txtAddressProvince"
-        android:layout_alignStart="@+id/txtAddressProvince"
-        android:layout_below="@+id/txtAddressProvince"
-        android:layout_alignRight="@+id/txtAddressProvince"
-        android:layout_alignEnd="@+id/txtAddressProvince" />
+        android:layout_alignEnd="@+id/txtCustomerTel"
+        android:layout_marginBottom="15dp"/>
 
 </RelativeLayout>
