@@ -32,4 +32,6 @@
     <string name="ResBtnMenuEmployee">Employee/User</string>
     <string name="ResBtnMenuCustomer">Customer</string>
     <string name="ResBtnBackItems">Back</string>
+    <string name="title_activity_employee__list">Employee List</string>
+    <string name="title_activity_employee">Employee</string>
 </resources>

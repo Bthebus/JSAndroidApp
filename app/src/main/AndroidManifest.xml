@@ -27,6 +27,14 @@
             android:name=".View.main_menu"
             android:label="@string/title_activity_main_menu" >
         </activity>
+        <activity
+            android:name=".View.Employee_List"
+            android:label="@string/title_activity_employee__list" >
+        </activity>
+        <activity
+            android:name=".View.Employee"
+            android:label="@string/title_activity_employee" >
+        </activity>
     </application>
 
 </manifest>

@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/txtUsername"
+                android:id="@+id/txtEmployeeUsername"
                 android:layout_alignParentEnd="false"
                 android:hint="@string/ResTxtUsername"
                 android:layout_below="@+id/imageView"
@@ -38,11 +38,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:id="@+id/txtPassword"
+                android:id="@+id/txtEmployeePassword"
                 android:hint="@string/ResTxtPassword"
                 android:password="true"
                 android:inputType="textPassword"
-                android:layout_below="@+id/txtUsername"
+                android:layout_below="@+id/txtEmployeeUsername"
                 android:layout_centerHorizontal="true" />
 
             <Button
@@ -53,7 +53,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="50dp"
-                android:layout_below="@+id/txtPassword"
+                android:layout_below="@+id/txtEmployeePassword"
                 android:layout_centerHorizontal="true" />
 
             <Button

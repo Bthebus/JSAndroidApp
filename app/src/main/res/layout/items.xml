@@ -73,9 +73,9 @@
         android:layout_below="@+id/imageView3"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/lblItemDescription"
         android:layout_toEndOf="@+id/lblItemDescription"
-        android:layout_marginRight="15dp"/>
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@+id/lblItemDescription" />
 
     <EditText
         android:layout_width="wrap_content"

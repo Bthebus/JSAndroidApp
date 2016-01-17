@@ -6,23 +6,23 @@ package jewellerystore.com.example.jewellerystore.model;
 public class Employee {
     private Long id;
     private Name name;
-    private Address address;
-    private float salary;
+    private String username;
+    private String password;
 
     public Employee() {
     }
 
-    public Employee(Name name, Address address, float salary) {
+    public Employee(Name name, String username, String password) {
         this.name = name;
-        this.address = address;
-        this.salary = salary;
+        this.username = username;
+        this.password = password;
     }
 
-    public Employee(Long id, Name name, Address address, float salary) {
+    public Employee(Long id, Name name, String username, String password) {
         this.id = id;
         this.name = name;
-        this.address = address;
-        this.salary = salary;
+        this.username = username;
+        this.password = password;
     }
 
     public Long getId() {
@@ -41,19 +41,19 @@ public class Employee {
         this.name = name;
     }
 
-    public Address getAddress() {
-        return address;
+    public String getUsername() {
+        return username;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public float getSalary() {
-        return salary;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSalary(float salary) {
-        this.salary = salary;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
