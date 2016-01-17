@@ -1,12 +1,24 @@
 package jewellerystore.com.example.jewellerystore.View;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import jewellerystore.com.example.jewellerystore.R;
 import jewellerystore.com.example.jewellerystore.model.Item;
@@ -17,93 +29,47 @@ import jewellerystore.com.example.jewellerystore.services.implementation.ItemSer
  */
 public class Items extends AppCompatActivity {
 
-    private boolean notEmpty = false;
-    EditText itemName;
-    EditText descr;
-    EditText price ;
-    EditText quantity;
-    private String context;
-    private String id;
-    private Long itemID;
-    private Item itemEdit;
-    private Item item2;
-    private boolean validQuantity;
-    private boolean validPrice;
-
-
-
+    private List<Item> item;
+    private boolean delete = false;
+    private int pos = -1;
+    ArrayList<HashMap<String, String>> columns;
+    HashMap<String,String> hashMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.items);
-        Bundle bundle = getIntent().getExtras();
-        if(bundle != null) {
+        setContentView(R.layout.home);
 
-            context = bundle.getString("context");
-            id = bundle.getString("id");
+        read();
+        displayList();
+        addItemButton();
 
-            if(context.equals("add"))
-            {
-                System.out.println("Context:" + bundle.getString("context"));
-
-            }
+        final Button btnBack = (Button)findViewById(R.id.btnBackItems);
 
 
-            else if(context.equals("edit"))
-            {
-                itemID =  Long.parseLong(bundle.getString("id"));
-                System.out.println("Edit ID: " + itemID);
-
-                editItem();
-                //saveNewItem();
-            }
-
-            saveNewItem();
-
-        }
-
-        cancelNewItem();
-
-
-
-
-        }
-
-    public void cancelNewItem()
-    {
-        final Button btnCancel = (Button) findViewById(R.id.btnCancelItem);
-
-        btnCancel.setOnClickListener(new View.OnClickListener() {
+        btnBack.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View v) {
-
-                itemName = (EditText) findViewById(R.id.txtItemName);
-                descr = (EditText) findViewById(R.id.txtItemDescription);
-                price = (EditText) findViewById(R.id.txtItemPrice);
-                quantity = (EditText) findViewById(R.id.txtItemQuantity);
-
-                itemName.setText(null);
-                descr.setText(null);
-                price.setText(null);
-                quantity.setText(null);
-
-                finish();
-
+            public void onClick(View view) {
+                try {
+                    finish();
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
-    public void editItem(){
+    public void read()
+    {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
 
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
+                ItemServiceImpl itemService = new ItemServiceImpl();
+                item = itemService.findAll();
 
-                    ItemServiceImpl itemService = new ItemServiceImpl();
-                    itemEdit = itemService.findById(itemID);
-                }
-            });
+            }
+        });
 
         thread.start();
 
@@ -112,162 +78,169 @@ public class Items extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        System.out.println("Item edit" + itemEdit.getName());
-
-        itemName = (EditText) findViewById(R.id.txtItemName);
-        descr = (EditText) findViewById(R.id.txtItemDescription);
-        price = (EditText) findViewById(R.id.txtItemPrice);
-        quantity = (EditText) findViewById(R.id.txtItemQuantity);
-
-        itemName.setText(itemEdit.getName());
-        descr.setText(itemEdit.getDescription());
-        price.setText(String.valueOf(itemEdit.getPrice()));
-        quantity.setText(String.valueOf(itemEdit.getQuantity_on_hand()));
-
     }
 
-    public void saveNewItem()
+    public void displayList()
     {
-        final Button btnSaveItem = (Button) findViewById(R.id.btnSaveItem);
+        columns = new ArrayList<HashMap<String, String>>();
+        hashMap = new HashMap<String, String>();
+        final ListView itemsList = (ListView) findViewById(R.id.listView);
 
-        btnSaveItem.setOnClickListener(new View.OnClickListener() {
+        registerForContextMenu(itemsList);
+
+        if(item == null)
+        {
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(Items.this);
+            alertDialog.setMessage("There are no items to display");
+            alertDialog.show();
+        }
+
+        else {
+
+            for (Item item2 : item) {
+                hashMap.put("name", item2.getName().toString());
+                hashMap.put("quantity", String.valueOf(item2.getQuantity_on_hand()));
+                hashMap.put("price", String.valueOf(item2.getPrice()));
+                columns.add(hashMap);
+                hashMap = new HashMap<String,String>();
+            }
+        }
+
+
+        if(item != null) {
+
+           /* if(delete == true)
+            {
+                columns.remove(pos);
+                delete = false;
+            }*/
+
+
+            SimpleAdapter simpleAdapter = new SimpleAdapter(this, columns, R.layout.display_tems, new String[]{"name", "quantity", "price"}, new int[]{R.id.headerName, R.id.headerQuantity, R.id.headerPrice});
+            itemsList.setAdapter(simpleAdapter);
+            simpleAdapter.notifyDataSetChanged();
+        }
+
+        itemsList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                pos = position;
+                openContextMenu(itemsList);
+                return true;
+            }
+        });
+    }
 
-                notEmpty = emptyFields();
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View view, ContextMenu.ContextMenuInfo menuInfo)
+    {
 
-                if (notEmpty == true) {
+        super.onCreateContextMenu(menu, view, menuInfo);
 
-                    validPrice = priceField();
-                    validQuantity = quantityField();
+        if(view.getId() == R.id.listView)
+        {
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.menu_list, menu);//xml file
+        }
+    }
 
-                    if (validPrice && validQuantity)
-                    {
+    @Override
+    public boolean onContextItemSelected(MenuItem menuItem)
+    {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuItem.getMenuInfo();
 
-                        Thread thread = new Thread(new Runnable() {
-                            @Override
-                            public void run() {
+        switch (menuItem.getItemId())
+        {
+            case R.id.editItem: editItem();
+                return true;
+            case R.id.deleteItem: deleteItem();
+                return true;
+            default:
+                return super.onContextItemSelected(menuItem);
+        }
+    }
 
-                                ItemServiceImpl itemService = new ItemServiceImpl();
+    private void addItemButton()
+    {
+        final Button addItemBtn = (Button) findViewById(R.id.btnAddItem);
+        addItemBtn.setOnClickListener(new OnClickListener() {
 
-                                itemName = (EditText) findViewById(R.id.txtItemName);
-                                descr = (EditText) findViewById(R.id.txtItemDescription);
-                                price = (EditText) findViewById(R.id.txtItemPrice);
-                                quantity = (EditText) findViewById(R.id.txtItemQuantity);
-
-                                System.out.println("assigned field values to variables");
-                                Double dPrice = Double.parseDouble(price.getText().toString());
-                                Integer dQuantity = Integer.parseInt(quantity.getText().toString());
-                                System.out.println("Conversions");
-
-                                item2 = new Item(itemID, itemName.getText().toString(), descr.getText().toString(), dPrice, dQuantity);
-                                System.out.println(item2.getId());
-                                System.out.println(item2.getName());
-                                System.out.println(item2.getDescription());
-                                System.out.println("assign values to item");
-
-                                System.out.println("item service implementation");
-
-                                if (context.equals("add")) {
-
-                                    System.out.println("Add context to save new item");
-                                    itemService.save(item2);
-                                }
-
-                                else if (context.equals("edit")) {
-                                    System.out.println("Attempting to save edited item");
-                                    itemService.update(item2);
-                                }
-                                System.out.println("save item");
-
-                                /*itemName.setText(null);
-                                descr.setText(null);
-                                price.setText(null);
-                                quantity.setText(null);*/
-
-                                finish();
-
-                            }
-                        });
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent i = new Intent(Items.this, ItemDetails.class);
+                    i.putExtra("context", "add");
+                    startActivity(i);
 
 
-                    thread.start();
 
-                    try {
-
-                        thread.join();
-
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                        Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_SHORT).show();
-                    }
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_SHORT).show();
                 }
 
+            }
+        });
+    }
+
+    public void editItem()
+    {
+                if(pos > -1) {
+                    Long id = item.get(pos).getId();
+                    Intent i = new Intent(Items.this, ItemDetails.class);
+                    i.putExtra("context", "edit");
+                    i.putExtra("id", id.toString());
+                    startActivity(i);
+
+                    pos = -1;
                 }
-                else
+
+                else if (pos == -1)
                 {
-                    Toast.makeText(getApplicationContext(), "Ensure that all fields have been filled in", Toast.LENGTH_LONG).show();
-                    /*AlertDialog.Builder alertDialog = new AlertDialog.Builder(Items.this);
-                    alertDialog.setMessage("Ensure that all fields have been filled in");
-                    alertDialog.show();*/
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(Items.this);
+                    dialog.setMessage("No item was selected for edit");
+                    dialog.show();
                 }
+    }
+
+    public void deleteItem()
+    {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(Items.this);
+
+        dialog.setTitle("Delete Item");
+        dialog.setMessage("Are you sure you want to delete this item?");
+        dialog.setNegativeButton("No", null);
+        dialog.setPositiveButton("Yes", new AlertDialog.OnClickListener() {
+
+            public void onClick(DialogInterface dialogInterface, int p) {
+
+                Thread thread1 = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        Long itemID = item.get(pos).getId();
+                        ItemServiceImpl itemService = new ItemServiceImpl();
+                        Item dltItem = itemService.findById(itemID);
+                        itemService.delete(dltItem);
+                        delete = true;
+                        item.remove(pos);
+                        displayList();
+                        //listChange();
+                    }
+                });
+
+                thread1.start();
+
+                try {
+
+                    thread1.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+
             }
         });
 
+        dialog.show();
     }
-
-    private boolean emptyFields(){
-
-        itemName = (EditText) findViewById(R.id.txtItemName);
-        descr = (EditText) findViewById(R.id.txtItemDescription);
-        price = (EditText) findViewById(R.id.txtItemPrice);
-        quantity = (EditText) findViewById(R.id.txtItemQuantity);
-
-        if((itemName.getText().toString().isEmpty()) || (descr.getText().toString().isEmpty()) || price.getText().toString().isEmpty() || quantity.getText().toString().isEmpty())
-        {
-
-        }
-        else
-        {
-
-            notEmpty = true;
-        }
-
-        return notEmpty;
-    }
-
-    private boolean priceField()
-    {
-        price = (EditText) findViewById(R.id.txtItemPrice);
-
-        if(Double.parseDouble(price.getText().toString()) <= 0)
-        {
-            Toast.makeText(getApplicationContext(), "Price cannot be less than 0", Toast.LENGTH_LONG).show();
-            return false;
-        }
-
-        else
-        {
-            return true;
-        }
-    }
-
-    private boolean quantityField()
-    {
-        quantity = (EditText) findViewById(R.id.txtItemQuantity);
-
-        if(Integer.parseInt(quantity.getText().toString()) <= 0)
-        {
-            Toast.makeText(getApplicationContext(), "Quantity cannot be 0 or less", Toast.LENGTH_LONG).show();
-            return false;
-        }
-
-        else
-        {
-            return true;
-        }
-    }
-
-    }
-
+}

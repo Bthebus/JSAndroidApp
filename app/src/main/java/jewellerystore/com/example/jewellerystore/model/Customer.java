@@ -6,23 +6,26 @@ package jewellerystore.com.example.jewellerystore.model;
 public class Customer {
     private Long id;
     private Name name;
+    private String companyName;
     private ContactInformation contactInformation;
     private Address address;
 
     public Customer() {
     }
 
-    public Customer(Name name, ContactInformation contactInformation, Address address) {
+    public Customer(Name name, String companyName, ContactInformation contactInformation, Address address) {
         this.name = name;
         this.contactInformation = contactInformation;
         this.address = address;
+        this.companyName = companyName;
     }
 
-    public Customer(Long id, Name name, ContactInformation contactInformation, Address address) {
+    public Customer(Long id, Name name, String companyName, ContactInformation contactInformation, Address address) {
         this.id = id;
         this.name = name;
         this.contactInformation = contactInformation;
         this.address = address;
+        this.companyName = companyName;
     }
 
     public Long getId() {
@@ -39,6 +42,14 @@ public class Customer {
 
     public void setName(Name name) {
         this.name = name;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public ContactInformation getContactInformation() {
