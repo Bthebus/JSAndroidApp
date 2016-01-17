@@ -32,7 +32,7 @@
     <string name="ResBtnMenuEmployee">Employee/User</string>
     <string name="ResBtnMenuCustomer">Customer</string>
     <string name="ResBtnBackItems">Back</string>
-<<<<<<< HEAD
+
     <string name="title_activity_customer">Customer</string>
     <string name="title_activity_customer_details">Customer Details</string>
     <string name="ResTxtSearchCustomer">Search by Name/Surname/Company</string>
@@ -48,8 +48,7 @@
     <string name="ResBtnMenuOrders">Orders</string>
     <string name="title_activity_orders">Orders</string>
     <string name="ResBtnCloseOrderList">Close</string>
-=======
+
     <string name="title_activity_employee__list">Employee List</string>
     <string name="title_activity_employee">Employee</string>
->>>>>>> c4309e18fdb9514b6669bdb4f270d6d872df757e
 </resources>
