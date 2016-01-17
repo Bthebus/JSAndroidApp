@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/viewCustomerDetails"
-        android:title="@string/view_customer_details"
-        android:text="@string/ResCustomerDetails"/>
+        android:title="View customer details"
+        android:text="Customer Details"/>
 
 </menu>
