@@ -44,4 +44,7 @@
     <string name="ResLblCustomerAddress">Address</string>
     <string name="ResCustomerDetails">View Details</string>
     <string name="view_customer_details">View Details</string>
+    <string name="ResBtnMenuOrders">Orders</string>
+    <string name="title_activity_orders">Orders</string>
+    <string name="ResBtnCloseOrderList">Close</string>
 </resources>

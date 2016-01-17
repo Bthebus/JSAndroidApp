@@ -34,6 +34,7 @@ public class Items extends AppCompatActivity {
     private int pos = -1;
     ArrayList<HashMap<String, String>> columns;
     HashMap<String,String> hashMap;
+    ListView itemsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +85,7 @@ public class Items extends AppCompatActivity {
     {
         columns = new ArrayList<HashMap<String, String>>();
         hashMap = new HashMap<String, String>();
-        final ListView itemsList = (ListView) findViewById(R.id.listView);
+        itemsList  = (ListView) findViewById(R.id.listView);
 
         registerForContextMenu(itemsList);
 
@@ -116,7 +117,7 @@ public class Items extends AppCompatActivity {
             }*/
 
 
-            SimpleAdapter simpleAdapter = new SimpleAdapter(this, columns, R.layout.display_tems, new String[]{"name", "quantity", "price"}, new int[]{R.id.headerName, R.id.headerQuantity, R.id.headerPrice});
+            final SimpleAdapter simpleAdapter = new SimpleAdapter(this, columns, R.layout.display_tems, new String[]{"name", "quantity", "price"}, new int[]{R.id.headerName, R.id.headerQuantity, R.id.headerPrice});
             itemsList.setAdapter(simpleAdapter);
             simpleAdapter.notifyDataSetChanged();
         }

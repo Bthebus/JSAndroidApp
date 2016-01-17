@@ -6,4 +6,10 @@
         android:title="@string/view_customer_details"
         android:text="@string/ResCustomerDetails"/>
 
+    <item
+        android:id="@+id/emailCustomer"
+        android:title="Email"
+        android:text="Email"
+        />
+
 </menu>

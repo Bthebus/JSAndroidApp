@@ -127,9 +127,24 @@ public class Customers extends AppCompatActivity {
                 i.putExtra("customerID", customerID.toString());
                 startActivity(i);
                 return true;
+
+            case R.id.emailCustomer:
+                emailCustomer();
+                return true;
             default:
                 return super.onContextItemSelected(menuItem);
         }
+    }
+
+    public void emailCustomer()
+    {
+        Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+        String toEmailList[] = {"yusraismail17@gmail.com"};
+        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, toEmailList);
+        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject");
+        emailIntent.setType("plain/text");
+        emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Message");
+        startActivity(Intent.createChooser(emailIntent, "Send your email in:"));
     }
 
     @Override
