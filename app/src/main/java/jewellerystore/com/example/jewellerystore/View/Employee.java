@@ -138,7 +138,7 @@ public class Employee extends AppCompatActivity {
         txtName.setText(employeeEdit.getName().getFirstName());
         txtSurname.setText(employeeEdit.getName().getSurname());
         txtUsername.setText(employeeEdit.getUsername());
-        txtPassword.setText(employeeEdit.getPassword());
+        //txtPassword.setText(employeeEdit.getPassword());
         //txtConfirmPassword.setText(employeeEdit.getName().getFirstName());
 
     }
