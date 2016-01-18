@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
         final Button btnExit = (Button) findViewById(R.id.btnExit);
         final Button btnSignIn = (Button) findViewById(R.id.btnSignIn);
 
-       /* username = (EditText)findViewById(R.id.txtEmployeeUsername);
+        username = (EditText)findViewById(R.id.txtEmployeeUsername);
         password = (EditText)findViewById(R.id.txtEmployeePassword);
 
-       users = new ArrayList<Employee>(); //C
+       /*users = new ArrayList<Employee>(); //C
 
-        users.add(new Employee(new Name("Michael","David","Jansen"),"Mike101","e10adc3949ba59abbe56e057f20f883e"));//C
+        users.add(new Employee(new Name("Michael","David","Jansen"),"Mike101","e10adc3949ba59abbe56e057f20f883e"));//C*/
 
        Thread thread = new Thread(new Runnable() {
             @Override
@@ -55,15 +55,13 @@ public class MainActivity extends AppCompatActivity {
             thread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }*/
+        }
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, jewellerystore.com.example.jewellerystore.View.Menu.class);
-                startActivity(intent);
-               /* try {
+                try {
                         if(username.getText().toString().equals("") || password.getText().toString().equals(""))
                         {
                             username.setText(username.getText().toString());
@@ -80,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
                                     {
                                         username.setText("");
                                         password.setText("");
-                                        Intent intent = new Intent(view.getContext(), main_menu.class);
-                                        startActivityForResult(intent, 0);
+                                        Intent intent2 = new Intent(MainActivity.this, jewellerystore.com.example.jewellerystore.View.Menu.class);
+                                        startActivity(intent2);
                                     }
                                     else
                                     {
@@ -97,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                 } catch (Exception e) {
-                    Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_SHORT).show();
-                }*/
+                    Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_LONG).show();
+                }
             }
         });
 

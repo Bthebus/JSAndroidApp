@@ -52,8 +52,8 @@ public class Employee_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                /*Intent intentAddEmployee = new Intent(Employee_List.this, jewellerystore.com.example.jewellerystore.View.Employee.class);
-                startActivity(intentAddEmployee);*/
+                Intent intentAddEmployee = new Intent(Employee_List.this, jewellerystore.com.example.jewellerystore.View.Employee.class);
+                startActivity(intentAddEmployee);
             }
         });
 

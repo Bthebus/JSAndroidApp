@@ -32,6 +32,7 @@
     <string name="ResBtnMenuEmployee">Employee/User</string>
     <string name="ResBtnMenuCustomer">Customer</string>
     <string name="ResBtnBackItems">Back</string>
+
     <string name="title_activity_customer">Customer</string>
     <string name="title_activity_customer_details">Customer Details</string>
     <string name="ResTxtSearchCustomer">Search by Name/Surname/Company</string>
@@ -49,11 +50,9 @@
     <string name="ResBtnCloseOrderList">Close</string>
     <string name="title_activity_employee__list">Employee List</string>
     <string name="title_activity_employee">Employee</string>
-    <string name="ResBtnAddNewEmployee">Add New Employee</string>
-    <string name="ResBtnBackEmployee">Back</string>
-    <string name="ResLogoEmployee">logo</string>
     <string name="title_activity_order__details">Order Details</string>
-    <string name="ResLblOrderID">Order ID:</string>
-    <string name="ResLblOrderCustomer">Customer:</string>
-    <string name="ResBtnCloseOrderDetails">close</string>
+    <string name="ResLblOrderID">Order ID</string>
+    <string name="ResBtnCloseOrderDetails">Close</string>
+    <string name="ResBtnAddNewEmployee">Add</string>
+    <string name="ResBtnBackEmployee"></string>
 </resources>

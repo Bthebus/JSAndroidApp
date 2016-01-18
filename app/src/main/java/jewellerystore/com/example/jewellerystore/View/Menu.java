@@ -21,6 +21,7 @@ public class Menu extends AppCompatActivity {
         final Button btnSignOut = (Button) findViewById(R.id.btnSignOut);
         final Button btnMenuCustomer = (Button) findViewById((R.id.btnMenuCustomer));
         final Button btnMenuOrders = (Button) findViewById(R.id.btnMenuOrders);
+        final Button btnEmployee = (Button) findViewById(R.id.btnMenuEmployee);
 
         btnMenuItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +55,16 @@ public class Menu extends AppCompatActivity {
 
                 Intent intentOrders = new Intent(Menu.this, jewellerystore.com.example.jewellerystore.View.Orders.class);
                 startActivity(intentOrders);
+            }
+        });
+
+        btnEmployee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intentEmployee = new Intent(Menu.this,Employee_List.class);
+                System.out.println("Activity created");
+                startActivity(intentEmployee);
             }
         });
 
