@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
         final Button btnExit = (Button) findViewById(R.id.btnExit);
         final Button btnSignIn = (Button) findViewById(R.id.btnSignIn);
 
-        username = (EditText)findViewById(R.id.txtEmployeeUsername);
+       /* username = (EditText)findViewById(R.id.txtEmployeeUsername);
         password = (EditText)findViewById(R.id.txtEmployeePassword);
 
-/*        users = new ArrayList<Employee>();
+       users = new ArrayList<Employee>(); //C
 
-        users.add(new Employee(new Name("Michael","David","Jansen"),"Mike101","e10adc3949ba59abbe56e057f20f883e"));
-*/
+        users.add(new Employee(new Name("Michael","David","Jansen"),"Mike101","e10adc3949ba59abbe56e057f20f883e"));//C
+
        Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -55,22 +55,21 @@ public class MainActivity extends AppCompatActivity {
             thread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
+
+                Intent intent = new Intent(MainActivity.this, jewellerystore.com.example.jewellerystore.View.Menu.class);
+                startActivity(intent);
+               /* try {
                         if(username.getText().toString().equals("") || password.getText().toString().equals(""))
                         {
                             username.setText(username.getText().toString());
                             Toast.makeText(getApplicationContext(), "Username AND password Required!", Toast.LENGTH_SHORT).show();
                         }
-                        /*
-                        *
-                        * Add code to handle user login here
-                        *
-                        * */
+
                         else
                         {
                             for(Employee tempUser:users)
@@ -99,9 +98,11 @@ public class MainActivity extends AppCompatActivity {
 
                 } catch (Exception e) {
                     Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_SHORT).show();
-                }
+                }*/
             }
         });
+
+
 
         //destroys the application completely
         btnExit.setOnClickListener(new View.OnClickListener() {

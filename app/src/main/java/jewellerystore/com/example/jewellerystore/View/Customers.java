@@ -139,7 +139,7 @@ public class Customers extends AppCompatActivity {
     public void emailCustomer()
     {
         Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-        String toEmailList[] = {"yusraismail17@gmail.com"};
+        String toEmailList[] = {customerList.get(pos).getContactInformation().getEmail()};
         emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, toEmailList);
         emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject");
         emailIntent.setType("plain/text");

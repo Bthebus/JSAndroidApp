@@ -16,7 +16,7 @@ public class main_menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
+        setContentView(R.layout.activity_main);
 
         final Button btnMenuItem = (Button) findViewById(R.id.btnMenuItem);
         final Button btnSignOut = (Button) findViewById(R.id.btnSignOut);
@@ -26,8 +26,8 @@ public class main_menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intentItem = new Intent(main_menu.this, Home.class);
-                startActivity(intentItem);
+                /*Intent intentItem = new Intent(main_menu.this, Home.class);
+                startActivity(intentItem);*/
             }
         });
 

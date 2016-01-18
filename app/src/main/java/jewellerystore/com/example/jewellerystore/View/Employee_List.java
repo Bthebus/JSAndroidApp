@@ -52,8 +52,8 @@ public class Employee_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intentAddEmployee = new Intent(Employee_List.this, jewellerystore.com.example.jewellerystore.View.Employee.class);
-                startActivity(intentAddEmployee);
+                /*Intent intentAddEmployee = new Intent(Employee_List.this, jewellerystore.com.example.jewellerystore.View.Employee.class);
+                startActivity(intentAddEmployee);*/
             }
         });
 
@@ -259,7 +259,7 @@ public class Employee_List extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_employee__list, menu);
+       // getMenuInflater().inflate(R.menu.menu_employee__list, menu);
         return true;
     }
 

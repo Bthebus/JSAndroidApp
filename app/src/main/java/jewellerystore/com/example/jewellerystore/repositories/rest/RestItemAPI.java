@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
  */
 public class RestItemAPI implements RestAPI<Item, Long>{
 
-    final String BASE_URL = "http://10.0.2.2:8081/item/";
+    final String BASE_URL = "http://10.0.2.2:8080/item/";
     //final String BASE_URL = "http://127.0.0.1:8081/item/";
 
     final HttpHeaders requestHeaders = RestMethods.getHeaders();

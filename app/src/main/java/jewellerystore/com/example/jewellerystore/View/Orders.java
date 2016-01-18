@@ -1,10 +1,14 @@
 package jewellerystore.com.example.jewellerystore.View;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -28,6 +32,8 @@ public class Orders extends AppCompatActivity {
     List<Long> customerIDList;
     Long customerID;
 
+    int pos = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +41,8 @@ public class Orders extends AppCompatActivity {
         final Button btnCloseOrders = (Button) findViewById(R.id.btnCloseOrderList);
         customerIDList = new ArrayList<Long>();
 
-        ListView ordersListView = (ListView) findViewById(R.id.OrdersListView);
-        //registerForContextMenu(ordersListView);
+        final ListView ordersListView = (ListView) findViewById(R.id.OrdersListView);
+        registerForContextMenu(ordersListView);
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -92,6 +98,14 @@ public class Orders extends AppCompatActivity {
 
             SimpleAdapter simpleAdapter = new SimpleAdapter(this, columns,R.layout.display_orders, new String[]{"customerName", "orderDate"}, new int[]{R.id.headerCustomerOrders, R.id.headerOrderDate});
             ordersListView.setAdapter(simpleAdapter);
+            ordersListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                    pos = position;
+                    openContextMenu(ordersListView);
+                    return true;
+                }
+            });
 
         }
 
@@ -101,6 +115,37 @@ public class Orders extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View view, ContextMenu.ContextMenuInfo menuInfo)
+    {
+
+        super.onCreateContextMenu(menu, view, menuInfo);
+        if(view.getId() == R.id.OrdersListView);
+        {
+
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.menu_orders, menu);//xml file
+        }
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem menuItem)
+    {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuItem.getMenuInfo();
+
+        switch (menuItem.getItemId())
+        {
+            case R.id.viewOrderDetails:
+                Intent orderDetailsIntent = new Intent(Orders.this, Order_Details.class);
+                orderDetailsIntent.putExtra("orderID", orderList.get(pos).getId().toString());
+                startActivity(orderDetailsIntent);
+                return true;
+
+            default:
+                return super.onContextItemSelected(menuItem);
+        }
     }
 
     @Override

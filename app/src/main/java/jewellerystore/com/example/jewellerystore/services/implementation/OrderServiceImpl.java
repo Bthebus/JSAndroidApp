@@ -37,7 +37,6 @@ public class OrderServiceImpl implements OrderService{
     @Override
     public List<Orders> findAll()
     {
-        System.out.println("In orderServiceimpl");
         return rest.getAll();
     }
 }
